@@ -4,7 +4,7 @@ import BookCard from "../BookCard/BookCard";
 const Books = () => {
   const [books, setBooks] = useState([]);
   useEffect(() => {
-    fetch("../../../public/jsondata.json")
+    fetch("https://obaidullah-ahsan.github.io/b9a8-json-data/jsondata.json")
       .then((res) => res.json())
       .then((data) => setBooks(data));
   }, []);

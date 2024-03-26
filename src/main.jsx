@@ -9,6 +9,7 @@ import Root from './Components/Root/Root';
 import Home from './Components/Home/Home';
 import ListedBooks from './Components/Listed Books/ListedBooks';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
+import Book from './Components/Book/Book';
 
 
 const router = createBrowserRouter([
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
         path:"/listedbooks",
         element: <ListedBooks></ListedBooks>,
       },
-      
+      {
+        path:"/blog/:id",
+        element: <Book></Book>,
+        loader: ()=>fetch('https://obaidullah-ahsan.github.io/b9a8-json-data/jsondata.json'),
+      },
     ],
   },
 ]);
