@@ -11,6 +11,9 @@ import ListedBooks from './Components/Listed Books/ListedBooks';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Book from './Components/Book/Book';
 import HelpCenter from './Components/Help Center/HelpCenter';
+import ReadBooks from './Components/ReadBooks/ReadBooks';
+import WishlistBooks from './Components/Wishlist Books/WishlistBooks';
+import PagesToRead from './Components/Pages to Read/PagesToRead';
 
 
 const router = createBrowserRouter([
@@ -26,6 +29,21 @@ const router = createBrowserRouter([
       {
         path:"/listedbooks",
         element: <ListedBooks></ListedBooks>,
+        children:[
+          {
+            index: true,
+            element: <ReadBooks></ReadBooks>,
+            loader : ()=>fetch('https://obaidullah-ahsan.github.io/b9a8-json-data/jsondata.json'),
+          },
+          {
+            path: "wishlist",
+            element: <WishlistBooks></WishlistBooks>
+          },
+        ],
+      },
+      {
+        path:"/pagesread",
+        element: <PagesToRead></PagesToRead>,
       },
       {
         path:"/helpcenter",

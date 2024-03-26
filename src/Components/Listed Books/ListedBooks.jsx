@@ -1,5 +1,7 @@
 import { IoIosArrowDropdown } from "react-icons/io";
 import Tabs from "../Tabs/Tabs";
+import ReadBooks from "../ReadBooks/ReadBooks";
+import { Outlet } from "react-router-dom";
 
 const ListedBooks = () => {
   return (
@@ -33,6 +35,7 @@ const ListedBooks = () => {
         </div>
       </div>
       <Tabs></Tabs>
+      <Outlet></Outlet>
     </div>
   );
 };

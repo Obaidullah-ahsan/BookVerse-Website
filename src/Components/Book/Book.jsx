@@ -1,12 +1,20 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Tag from "../Tag/Tag";
+import {
+  getStoredReadBooks,
+  saveReadBooks,
+} from "../LocalStorage/localstorage";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Book = () => {
   const books = useLoaderData();
   const { id } = useParams();
   const idInt = parseInt(id);
   const book = books.filter((book) => book.bookId === idInt);
-  console.log(book);
+  const handleReadBtn = () => {
+    saveReadBooks(idInt,toast);
+  };
   const {
     image,
     author,
@@ -22,7 +30,11 @@ const Book = () => {
   return (
     <div className="flex flex-col md:flex-col lg:flex-row gap-12 m-4 md:m-10">
       <div className="p-14 bg-base-300 rounded-2xl flex justify-center md:max-h-[630px]">
-        <img className="h-[350px] md:h-[500px] text-center rounded-md" src={image} alt="" />
+        <img
+          className="h-[350px] md:h-[500px] text-center rounded-md"
+          src={image}
+          alt=""
+        />
       </div>
       <div className="flex-1 space-y-4">
         <h1 className="text-[40px]">{bookName}</h1>
@@ -55,10 +67,13 @@ const Book = () => {
           </div>
         </div>
         <div className="flex gap-4">
-            <button className="btn border-[#1313134D]">Read</button>
-            <button className="btn bg-[#50B1C9] text-white">Wishlist</button>
+          <button onClick={handleReadBtn} className="btn border-[#1313134D]">
+            Read
+          </button>
+          <button className="btn bg-[#50B1C9] text-white">Wishlist</button>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
