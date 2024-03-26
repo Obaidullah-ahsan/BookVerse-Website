@@ -20,9 +20,9 @@ const Book = () => {
     rating,
   } = book[0];
   return (
-    <div className="flex gap-12 m-10">
-      <div className="p-14 bg-base-300 rounded-2xl">
-        <img className="h-[500px] rounded-md" src={image} alt="" />
+    <div className="flex flex-col md:flex-col lg:flex-row gap-12 m-4 md:m-10">
+      <div className="p-14 bg-base-300 rounded-2xl flex justify-center md:max-h-[630px]">
+        <img className="h-[350px] md:h-[500px] text-center rounded-md" src={image} alt="" />
       </div>
       <div className="flex-1 space-y-4">
         <h1 className="text-[40px]">{bookName}</h1>
