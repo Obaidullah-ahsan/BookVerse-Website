@@ -10,7 +10,7 @@ const Books = () => {
   }, []);
   return (
     <div>
-      <h1 className="text-4xl font-bold text-center mx-auto mt-20 mb-9">
+      <h1 className="text-4xl font-bold text-center mx-auto mt-8 mb-4 md:mt-20 md:mb-9">
         Books
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 mx-4 md:mx-0">

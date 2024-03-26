@@ -1,4 +1,5 @@
 import { IoIosArrowDropdown } from "react-icons/io";
+import Tabs from "../Tabs/Tabs";
 
 const ListedBooks = () => {
   return (
@@ -6,7 +7,7 @@ const ListedBooks = () => {
       <h2 className="text-3xl text-center mx-auto font-bold py-6 mt-3 rounded-2xl bg-[#1313130D]">
         Books
       </h2>
-      <div className="flex justify-center mt-3">
+      <div className="flex justify-center mt-3 mb-8">
         <div className="dropdown">
           <div
             tabIndex={0}
@@ -31,6 +32,7 @@ const ListedBooks = () => {
           </ul>
         </div>
       </div>
+      <Tabs></Tabs>
     </div>
   );
 };
