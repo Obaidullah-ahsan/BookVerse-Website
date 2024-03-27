@@ -5,7 +5,7 @@ const Banner = () => {
     <div className="hero md:min-h-[500px] rounded-2xl bg-base-200">
       <div className="hero-content gap-6 md:gap-20">
         <div className="max-w-xl md:max-w-lg">
-          <h1 className="text-3xl md:text-5xl font-bold mb-5 md:mb-12">
+          <h1 className="text-3xl md:text-6xl font-bold mb-5 md:mb-12 font-[playfair-display]">
             Books to freshen up your bookshelf
           </h1>
           <Link to="/listedbooks">

@@ -23,7 +23,7 @@ const ReadBookCard = ({ book }) => {
         <img className="max-h-52 rounded-lg" src={image} alt="Shoes" />
       </div>
       <div>
-        <h2 className="text-2xl font-bold mb-3">{bookName}</h2>
+        <h2 className="text-2xl font-bold mb-3 font-[playfair-display]">{bookName}</h2>
         <p className="my-4">By : {author}</p>
         <div className="flex gap-4 items-center my-3">
           <span className="font-bold">Tag: </span>

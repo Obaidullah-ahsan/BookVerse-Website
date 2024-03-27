@@ -36,8 +36,11 @@ const saveWishlistBooks = (id,toast) => {
     localStorage.setItem("wishlist-books", JSON.stringify(storedWishlistBooks));
     toast("Added Wishlist")
   }
+  else if (isExist){
+    toast.error("Already Read");
+  }
   else{
-    toast.error("Already Read")
+    toast.error("Already Added Wishlist")
   }
 };
 

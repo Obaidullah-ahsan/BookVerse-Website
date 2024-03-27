@@ -16,7 +16,7 @@ const ListedBooks = () => {
             role="button"
             className="btn m-1 px-6 bg-[#23BE0A] text-white font-bold"
           >
-            Sort By <IoIosArrowDropdown></IoIosArrowDropdown>
+            Sort By <IoIosArrowDropdown size={20}></IoIosArrowDropdown>
           </div>
           <ul
             tabIndex={0}

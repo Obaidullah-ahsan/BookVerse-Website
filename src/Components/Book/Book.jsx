@@ -41,7 +41,7 @@ const Book = () => {
         />
       </div>
       <div className="flex-1 space-y-4">
-        <h1 className="text-[40px]">{bookName}</h1>
+        <h1 className="text-[40px] font-[playfair-display] font-bold">{bookName}</h1>
         <p className="text-[18px] font-medium">By : {author}</p>
         <p className="border-y py-3 text-[18px] font-medium">{category}</p>
         <p>

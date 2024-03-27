@@ -16,7 +16,7 @@ const BookCard = ({ book }) => {
           ))}
         </div>
         <div className="card-body pt-4">
-          <h2 className="card-title">{bookName}</h2>
+          <h2 className="card-title font-[playfair-display]">{bookName}</h2>
           <p>By : {author}</p>
           <div className="flex justify-around items-center border-t-2 border-dashed mt-4 pt-4">
             <p>{category}</p>
