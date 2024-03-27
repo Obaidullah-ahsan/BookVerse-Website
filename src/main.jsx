@@ -37,13 +37,15 @@ const router = createBrowserRouter([
           },
           {
             path: "wishlist",
-            element: <WishlistBooks></WishlistBooks>
+            element: <WishlistBooks></WishlistBooks>,
+            loader : ()=>fetch('https://obaidullah-ahsan.github.io/b9a8-json-data/jsondata.json'),
           },
         ],
       },
       {
         path:"/pagesread",
         element: <PagesToRead></PagesToRead>,
+        loader : ()=>fetch('https://obaidullah-ahsan.github.io/b9a8-json-data/jsondata.json'),
       },
       {
         path:"/helpcenter",

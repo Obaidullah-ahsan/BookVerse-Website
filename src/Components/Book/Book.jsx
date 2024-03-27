@@ -3,6 +3,7 @@ import Tag from "../Tag/Tag";
 import {
   getStoredReadBooks,
   saveReadBooks,
+  saveWishlistBooks,
 } from "../LocalStorage/localstorage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,6 +15,9 @@ const Book = () => {
   const book = books.filter((book) => book.bookId === idInt);
   const handleReadBtn = () => {
     saveReadBooks(idInt,toast);
+  };
+  const handleWishlistBtn = () => {
+    saveWishlistBooks(idInt,toast);
   };
   const {
     image,
@@ -70,7 +74,7 @@ const Book = () => {
           <button onClick={handleReadBtn} className="btn border-[#1313134D]">
             Read
           </button>
-          <button className="btn bg-[#50B1C9] text-white">Wishlist</button>
+          <button onClick={handleWishlistBtn} className="btn bg-[#50B1C9] text-white">Wishlist</button>
         </div>
       </div>
       <ToastContainer></ToastContainer>

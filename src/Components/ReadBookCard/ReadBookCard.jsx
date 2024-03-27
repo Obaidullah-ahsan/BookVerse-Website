@@ -18,8 +18,8 @@ const ReadBookCard = ({ book }) => {
     totalPages,
   } = book;
   return (
-    <div className="card flex flex-row py-4 bg-base-100 shadow-xl border">
-      <div className="bg-[#F3F3F3] mx-4 rounded-2xl py-8 px-14">
+    <div className="card flex flex-col md:flex-row py-4 px-4 bg-base-100 shadow-xl border">
+      <div className="bg-[#F3F3F3] flex items-center justify-center mx-4 rounded-2xl py-8 px-14">
         <img className="max-h-52 rounded-lg" src={image} alt="Shoes" />
       </div>
       <div>
@@ -30,13 +30,17 @@ const ReadBookCard = ({ book }) => {
           {tags.map((tag, idx) => (
             <Tag key={idx} tag={tag}></Tag>
           ))}
-          <span className="flex items-center gap-2">
-            <MdDateRange></MdDateRange>Year of Publishing: {yearOfPublishing}
-          </span>
         </div>
+        <span className="flex items-center gap-2">
+          <MdDateRange></MdDateRange>Year of Publishing: {yearOfPublishing}
+        </span>
         <div className="flex gap-6 my-4">
-          <p className="flex gap-2 items-center"><IoPersonOutline></IoPersonOutline>Publisher : {publisher}</p>
-          <p className="flex gap-2 items-center"><RiPagesLine></RiPagesLine>Page : {totalPages}</p>
+          <p className="flex gap-2 items-center">
+            <IoPersonOutline></IoPersonOutline>Publisher : {publisher}
+          </p>
+          <p className="flex gap-2 items-center">
+            <RiPagesLine></RiPagesLine>Page : {totalPages}
+          </p>
         </div>
         <div className="flex gap-4 items-center border-t pt-4">
           <p className="bg-[#328EFF26] px-5 py-[6px] rounded-full text-[#328EFF]">

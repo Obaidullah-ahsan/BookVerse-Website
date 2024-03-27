@@ -20,9 +20,8 @@ const ReadBooks = () => {
       setReadBook(bookread);
     }
   }, [books]);
-
   return (
-    <div className="flex flex-col gap-6 my-8">
+    <div className="flex flex-col gap-6 my-2 mx-3 md:my-8">
       {readBook.map((book) => (
         <ReadBookCard key={book.bookId} book={book}></ReadBookCard>
       ))}
