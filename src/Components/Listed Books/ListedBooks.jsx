@@ -1,9 +1,25 @@
 import { IoIosArrowDropdown } from "react-icons/io";
 import Tabs from "../Tabs/Tabs";
-import ReadBooks from "../ReadBooks/ReadBooks";
 import { Outlet } from "react-router-dom";
+import { createContext, useState } from "react";
+
+export const FilterContext = createContext();
 
 const ListedBooks = () => {
+  const [filter, setFilter] = useState();
+
+  const handleFilter = (filter) => {
+    if (filter === "default") {
+      setFilter(filter);
+    } else if (filter === "rating") {
+      setFilter(filter);
+    } else if (filter === "numberofpages") {
+      setFilter(filter);
+    } else if (filter === "published year") {
+      setFilter(filter);
+    }
+  };
+
   return (
     <div>
       <h2 className="text-3xl text-center mx-auto font-bold py-6 mt-3 rounded-2xl bg-[#1313130D]">
@@ -22,20 +38,25 @@ const ListedBooks = () => {
             tabIndex={0}
             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
+            <li onClick={() => handleFilter("default")}>
+              <a>Default</a>
+            </li>
+            <li onClick={() => handleFilter("rating")}>
               <a>Rating</a>
             </li>
-            <li>
+            <li onClick={() => handleFilter("numberofpages")}>
               <a>Number of pages</a>
             </li>
-            <li>
-              <a>Publisher year</a>
+            <li onClick={() => handleFilter("published year")}>
+              <a>Published year</a>
             </li>
           </ul>
         </div>
       </div>
       <Tabs></Tabs>
-      <Outlet></Outlet>
+      <FilterContext.Provider value={filter}>
+        <Outlet></Outlet>
+      </FilterContext.Provider>
     </div>
   );
 };

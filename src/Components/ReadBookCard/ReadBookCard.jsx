@@ -49,7 +49,7 @@ const ReadBookCard = ({ book }) => {
           <p className="bg-[#FFAC3326] px-5 py-[6px] rounded-full text-[#FFAC33]">
             Rating : {rating}
           </p>
-          <Link to={`/blog/${bookId}`}>
+          <Link to={`/book/${bookId}`}>
             <button className="btn bg-[#23BE0A] text-white font-semibold rounded-full min-h-10 h-10">
               View Details
             </button>
