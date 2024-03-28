@@ -9,9 +9,36 @@ const WishlistBooks = () => {
   const [wishlistBooks, setWishlistBooks] = useState([]);
   const [displaywishlistBooks, setDisplayWishlistBooks] = useState([]);
   const filter = useContext(FilterContext);
+  useEffect(() => {
+    const sortBooksByDescending = (books, typeOfDescending) => {
+      return books.sort((a, b) => b[typeOfDescending] - a[typeOfDescending]);
+    };
+    const handleBookFilter = (filter) => {
+      if (filter === "default") {
+        const sortedBooks = sortBooksByDescending([...wishlistBooks]);
+        setDisplayWishlistBooks(sortedBooks);
+      } else if (filter === "rating") {
+        const sortedBooks = sortBooksByDescending([...wishlistBooks], "rating");
+        setDisplayWishlistBooks(sortedBooks);
+      } else if (filter === "numberofpages") {
+        const sortedBooks = sortBooksByDescending(
+          [...wishlistBooks],
+          "totalPages"
+        );
+        setDisplayWishlistBooks(sortedBooks);
+      }
+      if (filter === "published year") {
+        const sortedBooks = sortBooksByDescending(
+          [...wishlistBooks],
+          "yearOfPublishing"
+        );
+        setDisplayWishlistBooks(sortedBooks);
+      }
+    };
+    handleBookFilter(filter);
+  }, [filter]);
+
   
-
-
   useEffect(() => {
     const storedWishlistBooksIds = getStoredWishlistBooks();
     if (books.length > 0) {
