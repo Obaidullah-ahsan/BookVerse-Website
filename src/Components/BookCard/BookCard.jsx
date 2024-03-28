@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const BookCard = ({ book }) => {
   const { bookId, tags, author, category, rating, bookName, image } = book;
   return (
-    <Link to={`/blog/${bookId}`}>
+    <Link to={`/book/${bookId}`}>
       <div className="card py-4 bg-base-100 shadow-xl border">
         <figure className="bg-[#F3F3F3] mx-4 rounded-2xl py-4">
           <img className="max-h-44" src={image} alt="Shoes" />

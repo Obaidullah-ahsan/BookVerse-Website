@@ -14,6 +14,7 @@ import HelpCenter from './Components/Help Center/HelpCenter';
 import ReadBooks from './Components/ReadBooks/ReadBooks';
 import WishlistBooks from './Components/Wishlist Books/WishlistBooks';
 import PagesToRead from './Components/Pages to Read/PagesToRead';
+import AboutUs from './Components/About us/AboutUs';
 
 
 const router = createBrowserRouter([
@@ -48,11 +49,15 @@ const router = createBrowserRouter([
         loader : ()=>fetch('https://obaidullah-ahsan.github.io/b9a8-json-data/jsondata.json'),
       },
       {
+        path:"/aboutus",
+        element: <AboutUs></AboutUs>,
+      },
+      {
         path:"/helpcenter",
         element: <HelpCenter></HelpCenter>,
       },
       {
-        path:"/blog/:id",
+        path:"/book/:id",
         element: <Book></Book>,
         loader: ()=>fetch('https://obaidullah-ahsan.github.io/b9a8-json-data/jsondata.json'),
       },
